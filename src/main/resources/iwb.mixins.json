@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "iwb.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"WorldBorderSyncerRemover",
+		"ListenersExposer"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
