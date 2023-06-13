@@ -5,7 +5,8 @@
 	"mixins": [
 		"removeinitialworldbordersyncers",
 		"addsyncersremover",
-		"modifysendWorldInfo"
+		"modifysendWorldInfo",
+		"modifyWorldBorderCommand"
 	],
 	"injectors": {
 		"defaultRequire": 1
