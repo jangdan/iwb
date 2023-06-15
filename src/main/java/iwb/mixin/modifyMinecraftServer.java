@@ -28,7 +28,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.server.PlayerManager;
 
-@ Mixin (MinecraftServer.class) abstract class replacevanillaWorldBorderListeners {
+@ Mixin (MinecraftServer.class) abstract class modifyMinecraftServer {
   @ Inject (method = "createWorlds", at = @ At ("RETURN"), require = 1) void onCreateWorlds(CallbackInfo ci) {
     System.out.println("SDA");
     for (var world: getWorlds()) {
