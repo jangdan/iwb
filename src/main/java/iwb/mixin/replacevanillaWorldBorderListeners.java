@@ -5,7 +5,9 @@ import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
 import iwb.ModdedWorldBorder;
+
 import java.util.function.Function;
 import net.minecraft.nbt.NbtCompound;
 import iwb.WorldBorderPersistentState;
@@ -13,6 +15,7 @@ import net.minecraft.world.border.WorldBorder;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.nbt.NbtOps;
 import java.util.function.Supplier;
+
 import net.minecraft.world.border.WorldBorderListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.WorldBorderSizeChangedS2CPacket;
@@ -20,15 +23,17 @@ import net.minecraft.network.packet.s2c.play.WorldBorderInterpolateSizeS2CPacket
 import net.minecraft.network.packet.s2c.play.WorldBorderCenterChangedS2CPacket;
 import net.minecraft.network.packet.s2c.play.WorldBorderWarningTimeChangedS2CPacket;
 import net.minecraft.network.packet.s2c.play.WorldBorderWarningBlocksChangedS2CPacket;
+
 import org.spongepowered.asm.mixin.Shadow;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.server.PlayerManager;
 
 @ Mixin (MinecraftServer.class) abstract class replacevanillaWorldBorderListeners {
-  @ Inject (method = "createWorlds", at = @At("RETURN"), require = 1) void onCreateWorlds(CallbackInfo ci) {
+  @ Inject (method = "createWorlds", at = @ At ("RETURN"), require = 1) void onCreateWorlds(CallbackInfo ci) {
     System.out.println("SDA");
     for (var world: getWorlds()) {
       ((ModdedWorldBorder) world.getWorldBorder()).clearListeners();
+      
       // After decoupling this `world`'s world border from the Overworld world border, load the saved state (if it exists)
       var worldborderpersistentstate = world.getChunkManager().getPersistentStateManager().getOrCreate(
         // Deserialize: `NbtCompound` -> `WorldBorderPersistentState`
@@ -43,6 +48,7 @@ import net.minecraft.server.PlayerManager;
         }},
         "world border"
       );
+      
       var playerManager = getPlayerManager();
       var dimension = world.getRegistryKey();
       world.getWorldBorder().addListener(new WorldBorderListener () {
