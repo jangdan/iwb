@@ -2,12 +2,8 @@
 	"schemaVersion": 1,
 	"id": "iwb",
 	"version": "${version}",
-	"environment": "server",
 	"mixins": [
-		{
-			"config": "Mixinsetconfiguration.JSON",
-			"environment": "server"
-		}
+		"Mixinsetconfiguration.JSON"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
