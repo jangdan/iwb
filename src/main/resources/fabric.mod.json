@@ -5,7 +5,7 @@
 	"environment": "server",
 	"mixins": [
 		{
-			"config": "iwb.mixins.json",
+			"config": "Mixinsetconfiguration.JSON",
 			"environment": "server"
 		}
 	],

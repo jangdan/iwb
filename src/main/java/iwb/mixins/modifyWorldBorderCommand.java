@@ -1,4 +1,4 @@
-package iwb.mixin;
+package iwb.mixins;
 
 import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.server.command.WorldBorderCommand;
