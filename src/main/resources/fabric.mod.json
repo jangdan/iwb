@@ -2,40 +2,30 @@
 	"schemaVersion": 1,
 	"id": "iwb",
 	"version": "${version}",
-	"name": "Independent World Borders",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/iwb/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"iwb.ExampleMod"
-		],
-		"client": [
-			"iwb.ExampleModClient"
-		]
-	},
+	"environment": "server",
 	"mixins": [
-		"iwb.mixins.json",
 		{
-			"config": "iwb.client.mixins.json",
-			"environment": "client"
+			"config": "iwb.mixins.json",
+			"environment": "server"
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.14.19",
+		"fabricloader": ">=0.14.21",
 		"minecraft": ">=1.20",
-		"java": ">=17",
-		"fabric-api": "*"
+		"java": ">=17"
 	},
-	"suggests": {
-		"another-mod": "*"
-	}
+	"name": "Independent World Borders",
+	"description": "독립 월드 보더",
+	"contact": {
+    "email": "minhyukjang@gmail.com"
+	},
+  "authors": [
+    {
+      "name": "Daniel Jang",
+      "contact": {
+        "email": "minhyukjang@gmail.com"
+      }
+    }
+  ],
+	"icon": "assets/iwb/icon.png"
 }
