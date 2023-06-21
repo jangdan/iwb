@@ -3,7 +3,7 @@
 	"id": "iwb",
 	"version": "${version}",
 	"mixins": [
-		"Mixinsetconfiguration.JSON"
+		"Mixinsetconfiguration.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
